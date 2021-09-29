@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>BTAP Staking</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="icon" type="image/png" sizes="192x192"  href="assets/img/btap_logo.svg">
+</head>
+
+<body style="background-color: rgb(8, 27, 64);margin-bottom: 32px;">
+<nav class="navbar navbar-light navbar-expand-md navigation-clean-button" style="background-color: rgb(17, 37, 76);">
+        <div class="container">
+            <div class="text-left"><img src="assets/img/btap_logo.svg" style="width: 50px;"><a class="navbar-brand text-left" href="#" style="color: rgb(255,255,255);">&nbsp;BTA Protocol Staking</a></div>
+            <div><a class="topbar Home" href="index.html" style="padding: 8px 17px;"><strong>Home</strong></a><a class="topbar trade" href="WHITE PAPER HERE" style="padding: 8px 18px;"><strong>Whitepaper</strong></a><a class="topbar trade" href="FAQ HERE"
+                    style="padding: 8px 18px;"><strong>FAQ</strong></a></div>
+            <div><a class="topbar trade" href="https://app.uniswap.org/#/swap?inputCurrency=0x270371c58d9d775ed73971dd414656107384f235&outputCurrency=ETH" style="padding: 8px 18px;"><strong>Trade BTAP on PancakeSwap</strong></a></div>
+        </div>
+    </nav>
+    <div class="text-center" style="padding-top: 50px;">
+        <h1 class="display-2 text-center"><img src="assets/img/btap_logo.svg" style="width: 75px;"><br></h1>
+        <h1><strong>BTAP (BEP20)</strong></h1>
+    </div>
+    <h3 class="text-center">Stake your <strong>BTAP</strong> and earn <strong>more BTAP!</strong></h3>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h1 class="display-4 text-center card-title"><img src="assets/img/btap_logo.svg" style="width: 75px;"><br></h1>
+                            <h1 class="text-center"><span id="rewards"><strong>NaN</strong><br></span></h1>
+                            <p class="text-center" style="margin-bottom: 46px;"><strong>BTAP&nbsp;</strong>Earnings</p>
+                            <p class="text-center"><button class="btn btn-primary button" id="harvest" type="button" style="height: 45px;"><strong>Claim Rewards</strong></button></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h1 class="display-4 text-center card-title"><img src="assets/img/btap_logo.svg" style="width: 75px;"><br></h1>
+                            <h1 class="text-center"><span id="stakedBalance"><strong>NaN</strong><br></span></h1>
+                            <h6 class="text-center"><strong>BTAP </strong>Staked</h6>
+                            <p class="text-center"><strong>BTAP Wallet </strong>Balance&nbsp;<span id="tokenBalance">NaN</span></p>
+                            <p class="text-center" style="margin-bottom: 19px;"><button class="btn btn-primary button" id="stake" type="button" style="height: 45px;margin-right: 5px;"><strong>Stake</strong></button><input type="number" id="tokenAmount" class="inputBuy text-center" style="height: 44px;padding-top: 0px;">
+                                <button
+                                    class="btn btn-primary button" id="unstake" type="button" style="height: 44px;margin-left: 5px;"><strong>UnStake</strong></button>
+                            </p>
+                            <p class="text-center"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="btap.js"></script>
+    <script>
+async function loadWeb3() {
+    if (window.ethereum) {
+      window.web3 = new Web3(window.ethereum)
+      await window.ethereum.enable()
+    }
+    else if (window.web3) {
+      window.web3 = new Web3(window.web3.currentProvider)
+    }
+    else {
+      window.alert('Non-Ethereum browser detected. You should consider trying MetaMask!')
+    }
+  }
+  </script>        
+</body>
+
+</html>
